@@ -1,4 +1,4 @@
-import { resumes } from "constants";
+import { resumes } from "constants/index";
 import { usePuterStore } from "lib/puter";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router"
@@ -78,8 +78,8 @@ const Resume = () => {
          <h2 className="text-4xl !text-black font-bold">Resume Review</h2>
          {feedback ? (
            <div className="flex flex-col gap-8 animate-in fade-in">
-              <Summary feedback = {feedack}/>
-              <ATS score = {feedback.ATS.score || 0} suggestions = {feedback.ATS.tips || [0]} />
+              <Summary feedback = {feedback}/>
+              <ATS score={feedback.ATS?.score || 0} suggestions = {feedback.ATS?.tips || []} />
               <Details feedback = {feedback}/>
 
            </div>

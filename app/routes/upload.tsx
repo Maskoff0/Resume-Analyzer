@@ -5,7 +5,7 @@ import { useNavigate } from "react-router"
 import FileUploader from "~/components/FileUploader"
 import Navbar from "~/components/Navbar"
 import { generateUUID } from "utils/utils"
-import { prepareInstructions } from "constants/index"
+import { prepareInstructions ,  AIResponseFormat } from "constants/index"
 
 
 
@@ -46,7 +46,7 @@ const upload = () => {
 
        const feedback = await ai.feedback(
         UploadFile.path,
-        prepareInstructions({jobTitle , jobDescription})
+        prepareInstructions({jobTitle , jobDescription , AIResponseFormat})
 
        )
        if(!feedback) return setStatusText('Error : Failed to Analyze Resume...')
